@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from bhuvi import views
+from django.conf.urls import url, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +25,5 @@ urlpatterns = [
     path('home/',views.home,name='home'),
     path('aboutus/',views.aboutus,name='aboutus'),
     path('myhobbies/',views.myhobbies,name='myhobbies'),
+    url('mycontacts.*/',include('mycontacts.urls')),
     ]
